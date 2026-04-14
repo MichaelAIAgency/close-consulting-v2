@@ -50,14 +50,15 @@ export function ChanceSection() {
               </p>
             </div>
 
-            {/* Inline CTA Link */}
-            <a
-              href="#termin"
-              onClick={scrollToTermin}
-              className="text-[#d29f60] hover:text-[#e0b07a] transition-colors font-medium"
-            >
-              Jetzt bewerben →
-            </a>
+            <div className="pt-2">
+              <a
+                href="#termin"
+                onClick={scrollToTermin}
+                className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-[#0d2218] bg-[#d29f60] rounded-full hover:bg-[#e0b07a] transition-all duration-300 shadow-[0_0_15px_rgba(210,159,96,0.2)]"
+              >
+                Jetzt bewerben
+              </a>
+            </div>
           </motion.div>
 
           {/* Right Column - Stats Grid */}

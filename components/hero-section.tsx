@@ -117,18 +117,18 @@ export function HeroSection() {
             ))}
           </motion.div>
 
-          {/* CTA Link */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
+            className="flex justify-center"
           >
             <a
               href="#termin"
               onClick={scrollToTermin}
-              className="text-[#d29f60] hover:text-[#e0b07a] transition-colors font-medium text-base sm:text-lg"
+              className="inline-flex items-center justify-center px-8 py-3 text-base font-bold text-[#0d2218] bg-[#d29f60] rounded-full hover:bg-[#e0b07a] transition-all duration-300 shadow-[0_0_20px_rgba(210,159,96,0.3)] hover:shadow-[0_0_30px_rgba(210,159,96,0.5)]"
             >
-              Jetzt bewerben →
+              Jetzt bewerben
             </a>
           </motion.div>
         </div>

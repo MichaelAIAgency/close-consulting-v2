@@ -13,11 +13,6 @@ const requirements = [
 ]
 
 export function RequirementsSection() {
-  const scrollToTermin = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-    document.getElementById("termin")?.scrollIntoView({ behavior: "smooth" })
-  }
-
   return (
     <section className="py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,24 +66,6 @@ export function RequirementsSection() {
           Quereinsteiger sind herzlich willkommen. Wir schulen dich – du musst
           nur wollen.
         </motion.p>
-
-        {/* Inline CTA Link */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.9 }}
-          className="text-center mt-8"
-        >
-          <a
-            href="#termin"
-            onClick={scrollToTermin}
-            className="inline-flex items-center gap-2 text-[#d29f60] hover:text-[#e0b07a] transition-colors font-medium"
-          >
-            Jetzt bewerben
-            <span aria-hidden="true">→</span>
-          </a>
-        </motion.div>
       </div>
     </section>
   )
