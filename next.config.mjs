@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // <--- Add this line
+  output: 'export',
+  basePath: '/freelancerwerden',
+  assetPrefix: '/freelancerwerden',
   typescript: {
     ignoreBuildErrors: true,
   },
