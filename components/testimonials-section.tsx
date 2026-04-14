@@ -63,20 +63,37 @@ function TestimonialContent({
 }: {
   testimonial: (typeof testimonials)[0]
 }) {
+  const scrollToTermin = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    document.getElementById("termin")?.scrollIntoView({ behavior: "smooth" })
+  }
+
   return (
-    <div className="space-y-4">
-      <h3 className="text-2xl sm:text-3xl font-bold text-white text-balance">
-        &quot;{testimonial.title}&quot;
-      </h3>
-      <p className="text-[#d4d4d4] leading-relaxed">{testimonial.text}</p>
-      <div className="pt-2">
-        <p className="text-white font-medium">– {testimonial.name}</p>
-        <p className="text-[#d4d4d4]/70 text-sm">{testimonial.role}</p>
-        <div className="flex items-center gap-1 mt-2">
-          {[...Array(5)].map((_, i) => (
-            <Star key={i} className="w-4 h-4 fill-[#d29f60] text-[#d29f60]" />
-          ))}
+    <div className="space-y-6">
+      <div className="space-y-4">
+        <h3 className="text-2xl sm:text-3xl font-bold text-white text-balance">
+          &quot;{testimonial.title}&quot;
+        </h3>
+        <p className="text-[#d4d4d4] leading-relaxed">{testimonial.text}</p>
+        <div className="pt-2">
+          <p className="text-white font-medium">– {testimonial.name}</p>
+          <p className="text-[#d4d4d4]/70 text-sm">{testimonial.role}</p>
+          <div className="flex items-center gap-1 mt-2">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="w-4 h-4 fill-[#d29f60] text-[#d29f60]" />
+            ))}
+          </div>
         </div>
+      </div>
+      
+      <div className="pt-2">
+        <a
+          href="#termin"
+          onClick={scrollToTermin}
+          className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-[#0d2218] bg-[#d29f60] rounded-full hover:bg-[#e0b07a] transition-all duration-300"
+        >
+          Jetzt bewerben
+        </a>
       </div>
     </div>
   )
@@ -134,7 +151,6 @@ export function TestimonialsSection() {
           ))}
         </div>
 
-        {/* Inline CTA Link */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -147,7 +163,7 @@ export function TestimonialsSection() {
             onClick={scrollToTermin}
             className="text-[#d29f60] hover:text-[#e0b07a] transition-colors font-medium"
           >
-            Termin vereinbaren →
+            Jetzt bewerben →
           </a>
         </motion.div>
       </div>

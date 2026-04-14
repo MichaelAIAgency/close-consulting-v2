@@ -85,7 +85,7 @@ export function RequirementsSection() {
             onClick={scrollToTermin}
             className="inline-flex items-center gap-2 text-[#d29f60] hover:text-[#e0b07a] transition-colors font-medium"
           >
-            Jetzt Termin vereinbaren
+            Jetzt bewerben
             <span aria-hidden="true">→</span>
           </a>
         </motion.div>

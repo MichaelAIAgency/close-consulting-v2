@@ -1,13 +1,46 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Check } from "lucide-react"
+import { Check, Phone, MessageSquare, Mic, Smartphone, Headset } from "lucide-react"
 
 const trustBadges = [
   "1.000 € Fixum netto – jeden Monat",
   "100 % Remote & Homeoffice",
   "Vorqualifizierte Listen",
 ]
+
+const FloatingIcon = ({ icon: Icon, delay, x, y, size, duration }: { 
+  icon: any, 
+  delay: number, 
+  x: string, 
+  y: string, 
+  size?: number,
+  duration?: number 
+}) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5, left: x, top: y }}
+      animate={{ 
+        opacity: [0.2, 0.5, 0.2],
+        scale: [1, 1.05, 1],
+        y: [0, -30, 0],
+        rotate: [0, 10, -10, 0]
+      }}
+      transition={{ 
+        duration: duration || 8, 
+        repeat: Infinity, 
+        delay,
+        ease: "easeInOut"
+      }}
+      className="absolute pointer-events-none z-0 hidden lg:block"
+    >
+      <div className="p-5 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl overflow-hidden relative group">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#d29f60]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+        <Icon className="text-[#d29f60] relative z-10" size={size || 28} strokeWidth={1.5} />
+      </div>
+    </motion.div>
+  )
+}
 
 export function HeroSection() {
   const scrollToTermin = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -17,6 +50,16 @@ export function HeroSection() {
 
   return (
     <section id="home" className="relative min-h-screen pt-32 pb-20 overflow-hidden flex items-center">
+      {/* Dynamic Background Elements */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <FloatingIcon icon={Phone} x="10%" y="20%" delay={0} size={32} duration={10} />
+        <FloatingIcon icon={MessageSquare} x="85%" y="15%" delay={2} size={24} duration={12} />
+        <FloatingIcon icon={Mic} x="75%" y="65%" delay={1} size={30} duration={9} />
+        <FloatingIcon icon={Smartphone} x="15%" y="70%" delay={3} size={26} duration={11} />
+        <FloatingIcon icon={Headset} x="80%" y="40%" delay={4} size={28} duration={14} />
+        <FloatingIcon icon={Phone} x="5%" y="50%" delay={2.5} size={22} duration={13} />
+      </div>
+
       {/* Radial vignette at edges */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -25,7 +68,7 @@ export function HeroSection() {
         }}
       />
 
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
         <div className="space-y-6">
           {/* Main Headline - Compact and engaging */}
           <motion.h1
@@ -85,7 +128,7 @@ export function HeroSection() {
               onClick={scrollToTermin}
               className="text-[#d29f60] hover:text-[#e0b07a] transition-colors font-medium text-base sm:text-lg"
             >
-              Termin vereinbaren →
+              Jetzt bewerben →
             </a>
           </motion.div>
         </div>

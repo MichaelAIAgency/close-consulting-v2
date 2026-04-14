@@ -56,7 +56,7 @@ export function ChanceSection() {
               onClick={scrollToTermin}
               className="text-[#d29f60] hover:text-[#e0b07a] transition-colors font-medium"
             >
-              Termin vereinbaren →
+              Jetzt bewerben →
             </a>
           </motion.div>
 

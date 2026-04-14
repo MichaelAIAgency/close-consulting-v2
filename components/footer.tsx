@@ -172,7 +172,7 @@ function DatenschutzContent() {
         <h3 className="text-[#d29f60] font-semibold text-[1.05rem] mt-6 mb-2">6. Plugins und Tools</h3>
         <h4 className="text-white font-semibold mt-4 mb-2">HubSpot</h4>
         <p>
-          Wir nutzen HubSpot für unser Online-Marketing. Hierbei handelt es sich um eine integrierte Software-Lösung, mit der wir verschiedene Aspekte unseres Online-Marketings abdecken. Wenn Sie sich über unsere Website für einen Termin anmelden, werden die von Ihnen eingegebenen Daten bei HubSpot gespeichert und verarbeitet.
+          Wir nutzen HubSpot für unser Online-Marketing. Hierbei handelt es sich um eine integrierte Software-Lösung, mit der wir verschiedene Aspekte unseres Online-Marketings abdecken. Wenn Sie sich über unsere Website bewerben, werden die von Ihnen eingegebenen Daten bei HubSpot gespeichert und verarbeitet.
         </p>
         <h4 className="text-white font-semibold mt-4 mb-2">Wistia</h4>
         <p>

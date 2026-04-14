@@ -11,7 +11,7 @@ const navLinks = [
   { href: "#about", label: "Über uns" },
   { href: "#testimonials", label: "Testimonials" },
   { href: "#benefits", label: "Vorteile" },
-  { href: "#termin", label: "Bewerbung" },
+  { href: "#termin", label: "Jetzt bewerben" },
 ]
 
 export function Navbar() {
